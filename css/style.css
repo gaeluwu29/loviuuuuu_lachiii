@@ -1,0 +1,1144 @@
+.main-header {
+  position: relative; /* Levanta el header por encima del fondo */
+  z-index: 2;
+  text-align: center;
+  padding: 40px 20px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-badge {
+  display: inline-block;
+  background: rgba(255, 75, 114, 0.15);
+  border: 1px solid rgba(255, 75, 114, 0.4);
+  color: #ff9ebb;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #ff7597 50%, #a2c8ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* CAMBIO CLAVE: drop-shadow no tapa el texto transparente como text-shadow */
+  filter: drop-shadow(0 4px 15px rgba(255, 117, 151, 0.4)); 
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.main-subtitle {
+  color: #b0ccf0;
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.imagenCircular {
+    position: relative; /* Asegura visibilidad sobre el fondo */
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+
+    /* Forma circular */
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+    /* Borde elegante */
+    border: 4px solid #8ecae6;
+    outline: 3px solid rgba(142, 202, 230, 0.25);
+    outline-offset: 5px;
+
+    /* Efectos */
+    box-shadow:
+        0 0 15px rgba(142, 202, 230, 0.45),
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    display: block;
+    margin: 20px auto;
+
+    /* Animación suave */
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Efecto al pasar el cursor */
+.imagenCircular:hover {
+    transform: scale(1.08) rotate(2deg);
+    border-color: #ff8fab;
+
+    box-shadow:
+        0 0 25px rgba(255, 143, 171, 0.65),
+        0 12px 30px rgba(0, 0, 0, 0.3);
+}
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  .main-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+.timer-section {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.timer-title {
+  color: #ff7597;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.timer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.timer-card {
+  background: rgba(255, 75, 114, 0.1);
+  border: 1px solid rgba(255, 75, 114, 0.25);
+  border-radius: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.timer-card:hover {
+  transform: translateY(-3px);
+}
+
+.timer-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  color: #e0b0d0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+  .timer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* ==========================================
+   MÓDULO BOTÓN EXPLOSIÓN DE AMOR
+   ========================================== */
+
+.explosion-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+/* Estilo del botón interactivo */
+.love-btn {
+  background: linear-gradient(135deg, #ff4b72 0%, #ff2b56 100%);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 75, 114, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  user-select: none;
+  outline: none;
+}
+
+.love-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 75, 114, 0.6);
+}
+
+.love-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(255, 75, 114, 0.3);
+}
+
+/* Elemento flotante generado dinámicamente por JS */
+.floating-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform, opacity;
+}
+
+/* ==========================================
+   MÓDULO POLAROIDS
+   ========================================== */
+
+.polaroid-section {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.polaroid-title {
+    color: #ff7597;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.polaroid-subtitle {
+    color: #e0b0d0;
+    font-size: 0.88rem;
+    margin-top: 6px;
+    margin-bottom: 30px;
+}
+
+/* Cuadrícula */
+.polaroid-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 10px;
+}
+
+/* Tarjetas */
+.polaroid-card {
+    position: relative;
+    flex: 0 1 200px;
+    width: 200px;
+    padding: 12px 12px 25px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid-card:nth-child(odd) {
+    transform: rotate(-4deg);
+}
+
+.polaroid-card:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.polaroid-card:nth-child(3n) {
+    transform: rotate(-2deg);
+}
+
+.polaroid-card:hover {
+    transform: scale(1.06) rotate(0deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* Cinta */
+.tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(2px);
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Imágenes de las tarjetas */
+.polaroid-img-wrapper {
+    width: 100%;
+    height: 170px;
+    background: #eee;
+    overflow: hidden;
+}
+
+.polaroid-img-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.polaroid-caption {
+    font-family: 'Segoe Print', 'Comic Sans MS', cursive, sans-serif;
+    color: #333;
+    font-size: 0.9rem;
+    margin: 12px 0 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ==========================================
+   MODAL DE FOTO AMPLIADA
+   ========================================== */
+
+.polaroid-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: auto;
+    z-index: 99999;
+}
+
+/* Se muestra cuando JavaScript agrega esta clase */
+.polaroid-modal.is-open {
+    display: flex;
+}
+
+.polaroid-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    flex-shrink: 0;
+}
+
+/* Tarjeta ampliada */
+.polaroid-modal-card {
+    width: 100%;
+    padding: 16px 16px 25px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #333;
+
+    animation: polaroidAppear 0.3s ease;
+}
+
+/* Imagen ampliada */
+.polaroid-modal-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 55vh;
+    max-height: 55dvh;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.polaroid-modal-card h3 {
+    font-family: 'Segoe Print', 'Comic Sans MS', cursive, sans-serif;
+    color: #ff4b72;
+    font-size: 1.25rem;
+    margin: 15px 0 8px;
+    overflow-wrap: anywhere;
+}
+
+.polaroid-modal-card p {
+    color: #555;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Botón de cerrar */
+.polaroid-close-btn {
+    position: absolute;
+    top: -17px;
+    right: -12px;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    background: #ff4b72;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.polaroid-close-btn:hover {
+    background: #d93660;
+    transform: scale(1.08);
+}
+
+/* Animación de entrada */
+@keyframes polaroidAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 480px) {
+    .polaroid-modal {
+        padding: 18px;
+    }
+
+    .polaroid-modal-content {
+        max-width: 100%;
+    }
+
+    .polaroid-modal-card {
+        padding: 12px 12px 20px;
+    }
+
+    .polaroid-modal-card img {
+        max-height: 48vh;
+        max-height: 48dvh;
+    }
+
+    .polaroid-close-btn {
+        top: -14px;
+        right: -8px;
+    }
+}
+
+/* ==========================================
+   MÓDULO POST-ITS DIGITALES
+   ========================================== */
+
+.postits-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.postits-title {
+  color: #ff7597;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.postits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Base de la tarjeta Post-it */
+.postit {
+  position: relative;
+  width: 180px;
+  min-height: 180px;
+  padding: 25px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe Print', 'Comic Sans MS', cursive, sans-serif;
+  color: #2c2c2c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+  cursor: pointer;
+}
+
+/* Colores pastel clásicos */
+.postit.yellow { background-color: #fffa75; }
+.postit.pink   { background-color: #ff7eb9; }
+.postit.blue   { background-color: #7afcff; }
+.postit.green  { background-color: #97f59f; }
+.postit.red    {background-color:  #ff3c3c; }
+.postit.brown {background-color: #8D3E35;}
+.postit.purple {background-color: #B39EB5;}
+
+
+/* Inclinación alternada para realismo */
+.postit:nth-child(even) {
+  transform: rotate(4deg);
+}
+.postit:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+.postit:nth-child(3n) {
+  transform: rotate(2deg);
+}
+
+/* Efecto al pasar el cursor */
+.postit:hover {
+  transform: scale(1.1) rotate(0deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Detalle de la chincheta/pin */
+.pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
+}
+
+.postit p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+  text-align: left;
+}
+
+.postit-date {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+/*==============================================
+
+
+/* ==========================================
+   MÓDULO CARTA 3D
+   ========================================== */
+
+:root {
+  --env-color: #ff4b72;
+  --env-dark: #d93b5d;
+  --letter-bg: #fff8fb;
+  --seal-color: #b31d38;
+}
+
+/* Contenedor con perspectiva 3D */
+.envelope-container {
+  perspective: 1000px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 180px 20px 60px; /* Aumentamos padding superior para dar espacio a la carta desplegada */
+}
+
+/* Base del sobre */
+.envelope {
+  position: relative;
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  background-color: var(--env-dark);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+/* Efecto al pasar el cursor */
+@media (hover: hover) {
+  .envelope:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Solapa superior */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 110px solid var(--env-color);
+  transform-origin: top center;
+  transition: transform 0.6s ease, z-index 0s 0.3s;
+  z-index: 4;
+}
+
+/* Sello de cera */
+.wax-seal {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  background: var(--seal-color);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Bolsillo delantero */
+.pocket {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid var(--env-color);
+  border-right: 150px solid var(--env-color);
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid var(--env-color);
+  border-radius: 0 0 12px 12px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Hoja de la carta */
+.letter {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  width: 270px;
+  height: 180px;
+  background: var(--letter-bg);
+  border-radius: 8px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.6s ease 0.3s,
+    height 0.6s ease 0.3s;
+  z-index: 2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  /* MEJORAS DE TEXTO */
+  font-size: 0.88rem; /* Tamaño de letra legible */
+  line-height: 1.5; /* Espaciado cómodo entre líneas */
+  overflow-y: auto; /* Permite desplazamiento vertical con el dedo si el texto es largo */
+}
+
+.letter h2 {
+  margin: 0;
+  color: var(--env-color);
+  font-size: 1.15rem;
+}
+
+.signature {
+  margin-top: auto;
+  font-weight: bold;
+  color: var(--env-dark);
+  text-align: right;
+  padding-top: 6px;
+}
+
+/* ==========================================
+   ESTADO ABIERTO
+   ========================================== */
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope.open .wax-seal {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.5);
+  pointer-events: none;
+}
+
+.envelope.open .letter {
+  transform: translateY(-165px); /* Desplaza la carta más hacia arriba */
+  height: 300px; /* Carta más alta para que quepa bien el contenido */
+  z-index: 6;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 480px) {
+  .envelope-container {
+    padding-top: 190px;
+  }
+
+  .envelope {
+    transform: scale(0.92);
+    transform-origin: center;
+  }
+
+  .envelope.open {
+    transform: scale(0.92);
+  }
+}
+
+/* Respeto por la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .envelope,
+  .flap,
+  .wax-seal,
+  .letter {
+    transition-duration: 0.01ms;
+    transition-delay: 0ms;
+  }
+}
+
+/*============================================
+   MÓDULO NUESTRO CIELO (MAPA ESTELAR)
+   ========================================== */
+
+.sky-section {
+  width: 100%;
+  max-width: 850px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.sky-title {
+  color: #a2c8ff;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.sky-subtitle {
+  color: #7b9acc;
+  font-size: 0.88rem;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor del mapa estelar */
+.sky-container {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: radial-gradient(circle at center, #0c1836 0%, #050b1a 70%, #02050d 100%);
+  border: 1px solid rgba(162, 200, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 40px rgba(10, 30, 80, 0.5);
+  cursor: crosshair;
+}
+
+#starCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Modal Emergente de las Historias */
+.sky-modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 5, 13, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.sky-modal-content {
+  background: linear-gradient(145deg, #0d1b3e 0%, #081127 100%);
+  border: 1px solid rgba(162, 200, 255, 0.3);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(162, 200, 255, 0.15);
+  color: #e2eeff;
+}
+
+.sky-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.6rem;
+  color: #7b9acc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sky-close-btn:hover {
+  color: #ffffff;
+}
+
+.sky-date {
+  font-size: 0.78rem;
+  color: #a2c8ff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sky-story-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.sky-story-text {
+  color: #b0ccf0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   MÓDULO CUPONERA DEL AMOR
+   ========================================== */
+
+.coupons-section {
+  width: 100%;
+  max-width: 850px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.coupons-title {
+  color: #ff7597;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.coupons-subtitle {
+  color: #e0b0d0;
+  font-size: 0.88rem;
+  margin-top: 6px;
+  margin-bottom: 30px;
+}
+
+.coupons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Contenedor con perspectiva 3D */
+.coupon-card {
+  width: 240px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.coupon-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: 14px;
+}
+
+/* Clase que activa el giro */
+.coupon-card.flipped .coupon-inner {
+  transform: rotateY(180deg);
+}
+
+/* Caras frontal y trasera */
+.coupon-front, .coupon-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+/* Cara Frontal */
+.coupon-front {
+  background: linear-gradient(135deg, #ff4b72 0%, #d93b5d 100%);
+  color: #ffffff;
+}
+
+.coupon-icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.coupon-front h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.coupon-tag {
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Cara Trasera */
+.coupon-back {
+  background: #ffffff;
+  color: #2c2c2c;
+  transform: rotateY(180deg);
+  border: 2px dashed #ff4b72;
+}
+
+.coupon-back h4 {
+  color: #ff4b72;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.coupon-back p {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.coupon-code {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #ff4b72;
+  background: rgba(255, 75, 114, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   CIELO ESTRELLADO Y LUCIÉRNAGAS
+   ========================================== */
+
+#cosmic-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    135deg,
+    #070B1A 0%,
+    #101A38 50%,
+    #25204A 100%
+  );
+}
+
+.cosmic-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px rgba(200, 220, 255, 0.8);
+  animation: star-twinkle var(--duration, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.firefly {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #A2C8FF;
+  box-shadow:
+    0 0 8px 2px rgba(162, 200, 255, 0.6),
+    0 0 18px 4px rgba(100, 160, 255, 0.2);
+  opacity: 0;
+  animation: firefly-float var(--duration, 10s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+@keyframes firefly-float {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% { opacity: 0.9; }
+  50% {
+    opacity: 0.45;
+    transform: translate(25px, -35px);
+  }
+  80% { opacity: 0.8; }
+  100% {
+    opacity: 0;
+    transform: translate(-15px, -65px);
+  }
+}
+
+/* Respeta la preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .cosmic-star,
+  .firefly {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+
+/* Reseteo y estilo de los fieldsets como módulos */
+.module-fieldset {
+  /* Reseteo de propiedades nativas del navegador */
+  display: block;
+  margin: 0 auto 2.5rem auto;
+  padding: 1.5rem;
+  min-width: 0;
+  
+  /* Borde y fondo con estilo cósmico */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  
+  /* Mantener capas por encima del fondo */
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilo del título en el borde */
+.module-title {
+  display: inline-block;
+  width: auto;
+  padding: 0.2rem 0.8rem;
+  margin: 0 0 0 1rem;
+  
+  /* Apariencia del texto */
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  
+  /* Fondo pequeño para que la línea del borde no lo atraviese */
+  background: #101A38;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+/* ==========================================
+   AJUSTES RESPONSIVE PARA TELÉFONOS
+   ========================================== */
+
+@media (max-width: 600px) {
+  /* Reducir márgenes laterales en pantallas pequeñas */
+  body {
+    overflow-x: hidden;
+  }
+
+  .module-fieldset {
+    padding: 1rem 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Fotos Polaroid responsivas */
+  .polaroid-grid {
+    gap: 20px;
+  }
+
+  .polaroid-card {
+    flex: 0 1 100%;
+    max-width: 260px; /* Se adapta al centro del teléfono */
+  }
+
+  /* Ajuste de la cuponera */
+  .coupons-grid {
+    gap: 15px;
+  }
+
+  .coupon-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Altura del mapa de estrellas para teléfonos */
+  .sky-container {
+    height: 320px;
+  }
+
+  /* Ajuste para que las notas Post-it no se amontonen */
+  .postits-grid {
+    gap: 20px;
+  }
+
+  .postit {
+    width: 100%;
+    max-width: 260px;
+    min-height: 160px;
+  }
+}
