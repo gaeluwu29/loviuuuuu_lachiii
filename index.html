@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestro día ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="main-title">Nuestro Cielo en el 22 ❤️</h1>
+        <p class="main-subtitle">
+            Un pequeño espacio en el universo hecho solo para nosotros.
+        </p>
+    </header>
+    <img class="imagenCircular" src="media/YadiyYo.jpg" alt="GaelFoto">
+
+    <!-- MÓDULO CONTADOR DE TIEMPO -->
+    <fieldset class="module-fieldset">
+        <legend class="module-title">⏳ Tiempo Juntos</legend>
+        <section class="timer-section">
+            <h2 class="timer-title">Tiempo juntos ❤️</h2>
+
+            <div class="timer-grid">
+                <div class="timer-card">
+                    <span class="timer-number" id="timerDays">0</span>
+                    <span class="timer-label">Días</span>
+                </div>
+
+                <div class="timer-card">
+                    <span class="timer-number" id="timerHours">00</span>
+                    <span class="timer-label">Horas</span>
+                </div>
+
+                <div class="timer-card">
+                    <span class="timer-number" id="timerMinutes">00</span>
+                    <span class="timer-label">Minutos</span>
+                </div>
+
+                <div class="timer-card">
+                    <span class="timer-number" id="timerSeconds">00</span>
+                    <span class="timer-label">Segundos</span>
+                </div>
+            </div>
+        </section>
+    </fieldset>
+
+    <!-- MÓDULO BOTÓN EXPLOSIÓN DE AMOR -->
+    <fieldset class="module-fieldset">
+        <legend class="module-title">💖 Sorpresa</legend>
+        <section class="explosion-section">
+            <button type="button" class="love-btn" id="loveExplosionBtn">
+                ¡Haz clic para mucho amor! 💖
+            </button>
+        </section>
+    </fieldset>
+
+    <!-- MÓDULO POLAROIDS QUE SE REVELAN -->
+    <fieldset class="module-fieldset">
+        <legend class="module-title">📸 Momentos</legend>
+        <section class="polaroid-section">
+
+            <h2 class="polaroid-title">Nuestros Momentos en Fotos 📸</h2>
+            <p class="polaroid-subtitle">
+                Haz clic en cualquier foto para ver el recuerdo completo
+            </p>
+
+            <div class="polaroid-grid">
+
+                <!-- FOTO 1 -->
+                <div class="polaroid-card"
+                    onclick="openPolaroid('media/YadiyYo.jpg', 'Nuestra Primera Foto ☕', 'Es una foto muy especial para ambos... apenas empezabamos a conocernos.')">
+
+                    <div class="tape"></div>
+
+                    <div class="polaroid-img-wrapper">
+                        <img src="media/YadiyYo.jpg" alt="Nuestra primera Foto">
+                    </div>
+
+                    <p class="polaroid-caption">Primera Foto ✨</p>
+                </div>
+
+                <!-- FOTO 2 -->
+                <div class="polaroid-card"
+                    onclick="openPolaroid('media/espacio.jpg', 'El dia que nos conocimos 🌙', 'Esta imagen resuelve estrellas en el centro de la galaxia espiral barrada NGC 1313. La galaxia está aproximadamente a 14 millones de años luz en la constelación de Retículo.')">
+
+                    <div class="tape"></div>
+
+                    <div class="polaroid-img-wrapper">
+                        <img src="media/espacio.jpg" alt="El dia que nos conocimos">
+                    </div>
+
+                    <p class="polaroid-caption">El dia que nos conocimos 🌙</p>
+                </div>
+
+                <!-- FOTO 3 -->
+                <div class="polaroid-card"
+                    onclick="openPolaroid('media/Pintura.jpg', 'Aquel dia que vendimos juntos ❤️', 'Ese dia no era un dia especial, no estamos necesariamente arreglados, pero estabamos juntos y eso hizo esta foto espacial')">
+
+                    <div class="tape"></div>
+
+                    <div class="polaroid-img-wrapper">
+                        <img src="media/SelfieMiGustar.jpg" alt="La venta">
+                    </div>
+
+                    <p class="polaroid-caption">Aquel dia que vendimos juntos ❤️</p>
+                </div>
+
+                <!-- FOTO 4 -->
+                <div class="polaroid-card"
+                    onclick="openPolaroid('media/Pintura.jpg', 'Un día inolvidable ❤️', 'Ese dia la pintura y la diversion fue lo mejor')">
+
+                    <div class="tape"></div>
+
+                    <div class="polaroid-img-wrapper">
+                        <img src="media/Pintura.jpg" alt="un día inolvidable">
+                    </div>
+
+                    <p class="polaroid-caption">Un dia inolvidable 💖</p>
+                </div>
+
+                <!-- FOTO 5 -->
+                <div class="polaroid-card"
+                    onclick="openPolaroid('media/Globitos.png', 'Un Viaje inolvidable ❤️', 'Tuvimos muchisimas nuevas experiencias, cosas nuevas y emocionantes')">
+
+                    <div class="tape"></div>
+
+                    <div class="polaroid-img-wrapper">
+                        <img src="media/Globitos.png" alt="Aquel viaje que nunca olvidare">
+                    </div>
+
+                    <p class="polaroid-caption">Me encantó aquel viaje 💖</p>
+                </div>
+
+                <!-- FOTO 6 -->
+                <div class="polaroid-card"
+                    onclick="openPolaroid('media/Playa.jpg', 'Un dia muy increible ❤️', 'Ess expedicion a la playa fue increible, terminamos too quemaos')">
+
+                    <div class="tape"></div>
+
+                    <div class="polaroid-img-wrapper">
+                        <img src="media/Playa.jpg" alt="un día inolvidable">
+                    </div>
+
+                    <p class="polaroid-caption">Un Viaje a la playa 💖</p>
+                </div>
+            </div>
+
+            <!-- MODAL PARA AMPLIAR LAS FOTOS -->
+            <div class="polaroid-modal" id="polaroidModal" aria-hidden="true">
+
+                <div class="polaroid-modal-content">
+
+                    <button class="polaroid-close-btn" id="polaroidCloseBtn" type="button"
+                        aria-label="Cerrar foto ampliada">
+                        &times;
+                    </button>
+
+                    <div class="polaroid-modal-card">
+
+                        <img id="modalImg" src="" alt="Foto ampliada">
+
+                        <h3 id="modalTitle"></h3>
+
+                        <p id="modalDesc"></p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </fieldset>
+
+    <!-- MÓDULO POST-ITS DIGITALES -->
+    <fieldset class="module-fieldset">
+        <legend class="module-title">📌 Notas</legend>
+        <section class="postits-section">
+            <h2 class="postits-title">Pequeñas notas para ti 📌</h2>
+
+            <div class="postits-grid">
+                <div class="postit yellow">
+                    <div class="pin">📌</div>
+                    <p>
+                        Nunca olvides lo mucho que me haces sonreír, inclusive siendo solo tu
+                    </p>
+                    <span class="postit-date">Día 22</span>
+                </div>
+
+                <div class="postit pink">
+                    <div class="pin">📌</div>
+                    <p>
+                        Cuando los dias se vuelvan grises, recuerda que estoy aqui, tal vez no para hacerlo azul, pero para hacerlo menos gris
+                    </p>
+                    <span class="postit-date">Para siempre</span>
+                </div>
+
+                <div class="postit blue">
+                    <div class="pin">📌</div>
+                    <p>
+                        Vale totalmente la pena cada segundo que
+                        pasamos juntos. Te amo infinitamente.
+                    </p>
+                    <span class="postit-date">Tu novio</span>
+                </div>
+
+                <div class="postit green">
+                    <div class="pin">📌</div>
+                    <p>
+                        Recordatorio importante: eres mi cos^2 X
+                    </p>
+                    <span class="postit-date">math ❤️ </span>
+                </div>
+
+                <div class="postit red">
+                    <div class="pin">📌</div>
+                    <p>
+                        Recordatorio importante: eres la persona
+                        más increíble de mi mundo, de mi galaxia, de mi universo y de mi multiverso. ❤️
+                    </p>
+                    <span class="postit-date">Por siempreeeeee</span>
+                </div>
+
+                <div class="postit brown">
+                    <div class="pin">📌</div>
+                    <p>
+                        Besame un poquito... mucho, para siempre...
+                    </p>
+                    <span class="postit-date">mucho, mucho, muchoooooooooo</span>
+                </div>
+
+                <div class="postit purple">
+                    <div class="pin">📌</div>
+                    <p>
+                        Recordatorio importante: eres la persona
+                        más increíble de mi universo. ❤️
+                    </p>
+                    <span class="postit-date">Hoy y siempre</span>
+                </div>
+            </div>
+        </section>
+    </fieldset>
+
+    <!-- MÓDULO CARTA -->
+    <fieldset class="module-fieldset">
+        <legend class="module-title">✉️ Mi Carta</legend>
+        <section class="letter-section">
+            <div class="envelope-container">
+                <div class="envelope" id="loveEnvelope">
+                    <div class="flap"></div>
+
+                    <div class="wax-seal">❤️</div>
+
+                    <div class="letter">
+                        <h2>Para mi Lachi ❤️</h2>
+                        <p>En este universo tan vasto, que nos hace sentir tan pequeños como motas de polvo flotando en su
+                            inmensidad, agradezco que el destino haya permitido que mis átomos se encontraran con los tuyos,
+                            después de miles de millones de años de existir separados.
+                        </p>
+
+                        <p class="signature">Con amor, tu Guyil ❤️</p>
+                    </div>
+
+                    <div class="pocket"></div>
+                </div>
+            </div>
+        </section>
+    </fieldset>
+
+    <!-- MÓDULO NUESTRO CIELO -->
+    <fieldset class="module-fieldset">
+        <legend class="module-title">🌌 Estrellas</legend>
+        <section class="sky-section">
+            <h2 class="sky-title">Nuestro Cielo ✨</h2>
+            <p class="sky-subtitle">Haz clic en las estrellas para descubrir nuestros recuerdos</p>
+
+            <div class="sky-container">
+                <canvas id="starCanvas"></canvas>
+            </div>
+
+            <!-- Modal para mostrar la historia de la estrella seleccionada -->
+            <div class="sky-modal" id="skyModal">
+                <div class="sky-modal-content">
+                    <span class="sky-close-btn" id="skyCloseBtn">&times;</span>
+                    <span class="sky-date" id="starDate">Fecha</span>
+                    <h3 class="sky-story-title" id="starTitle">Título del Recuerdo</h3>
+                    <p class="sky-story-text" id="starStory">Historia o mensaje...</p>
+                </div>
+            </div>
+        </section>
+    </fieldset>
+
+    <!-- MÓDULO CUPONERA DEL AMOR -->
+    <fieldset class="module-fieldset">
+        <legend class="module-title">🎟️ Cuponera</legend>
+        <section class="coupons-section">
+            <h2 class="coupons-title">Cuponera del Amor 🎟️</h2>
+            <p class="coupons-subtitle">Haz clic en cualquier cupón para darle la vuelta y ver cómo canjearlo</p>
+
+            <div class="coupons-grid">
+                <!-- Cupón 1 -->
+                <div class="coupon-card" onclick="flipCoupon(this)">
+                    <div class="coupon-inner">
+                        <div class="coupon-front">
+                            <span class="coupon-icon">💋</span>
+                            <h3>Vale por una besuqueada</h3>
+                            <span class="coupon-tag">Sin derecho a protesta</span>
+                        </div>
+                        <div class="coupon-back">
+                            <h4>Términos y Condiciones:</h4>
+                            <p>Valido en cualquier momento, situacion, dia, mes, hora, cuando y donde sea
+                            </p>
+                            <span> reutilizable</span>
+                            <span class="coupon-code">CÓDIGO: BESO-22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupón 2 -->
+                <div class="coupon-card" onclick="flipCoupon(this)">
+                    <div class="coupon-inner">
+                        <div class="coupon-front">
+                            <span class="coupon-icon">🫂</span>
+                            <h3>Abrazo sin límite de tiempo</h3>
+                            <span class="coupon-tag">Duración ilimitada</span>
+                        </div>
+                        <div class="coupon-back">
+                            <h4>Términos y Condiciones:</h4>
+                            <p>Aplicable en cualquier momento y lugar. El abrazo no terminará hasta que tú decidas soltarme.</p>
+                            <span class="coupon-code">CÓDIGO: ABRAZO-INF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupón 3 -->
+                <div class="coupon-card" onclick="flipCoupon(this)">
+                    <div class="coupon-inner">
+                        <div class="coupon-front">
+                            <span class="coupon-icon">🍿</span>
+                            <h3>Vale por pelicula completa</h3>
+                            <span class="coupon-tag">Invito yo</span>
+                        </div>
+                        <div class="coupon-back">
+                            <h4>Términos y Condiciones:</h4>
+                            <p>Eliges la pelicula, la vemos con snacks y VEMOS la pelicula</p>
+
+                            <span class="coupon-code">CÓDIGO: Peli-22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupón 4 -->
+                <div class="coupon-card" onclick="flipCoupon(this)">
+                    <div class="coupon-inner">
+                        <div class="coupon-front">
+                            <span class="coupon-icon">🔭</span>
+                            <h3>Vale por salir a ver las estrellas</h3>
+                            <span class="coupon-tag">Comodín especial</span>
+                        </div>
+                        <div class="coupon-back">
+                            <h4>Términos y Condiciones:</h4>
+                            <p>Con este cupon saldremos a mirar las estrellas, escuchar musica y hablar</p>
+                            <span>Reutilizable</span>
+                            <span class="coupon-code">CÓDIGO: STAR-22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupón 5 -->
+                <div class="coupon-card" onclick="flipCoupon(this)">
+                    <div class="coupon-inner">
+                        <div class="coupon-front">
+                            <span class="coupon-icon">✨</span>
+                            <h3>Vale por tener la razon</h3>
+                            <span class="coupon-tag">Comodín especial</span>
+                        </div>
+                        <div class="coupon-back">
+                            <h4>Términos y Condiciones:</h4>
+                            <p>Al mostrar este cupón, automáticamente tienes la razón en lo que sea. Úsalo con sabiduría.</p>
+                            <span>Reutilizable</span>
+                            <span class="coupon-code">CÓDIGO: RAZON-ABSOLUTA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupón 6 -->
+                <div class="coupon-card" onclick="flipCoupon(this)">
+                    <div class="coupon-inner">
+                        <div class="coupon-front">
+                            <span class="coupon-icon">👟</span>
+                            <h3>Vale por salir a caminar</h3>
+                            <span class="coupon-tag">Comodín especial</span>
+                        </div>
+                        <div class="coupon-back">
+                            <h4>Términos y Condiciones:</h4>
+                            <p>Al mostrar este cupón, automáticamente yo aceptaré sin decir nada al respecto o negarme a menos de que esté enfermo</p>
+                            <span class="coupon-code">CÓDIGO: CAMINATA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cupón 7 -->
+                <div class="coupon-card" onclick="flipCoupon(this)">
+                    <div class="coupon-inner">
+                        <div class="coupon-front">
+                            <span class="coupon-icon">🎟️</span>
+                            <h3>Añadir un cupon</h3>
+                            <span class="coupon-tag">Unico uso</span>
+                        </div>
+                        <div class="coupon-back">
+                            <h4>Términos y Condiciones:</h4>
+                            <p>Al mostrar este cupón, añadirá automaticamente el cupon a tu eleccion</p>
+                            <span class="coupon-code">CÓDIGO: Cupon-22</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </fieldset>
+
+    <!-- JAVASCRIPT: al final del body -->
+    <script src="java/scrpt.js"></script>
+</body>
+
+</html>
